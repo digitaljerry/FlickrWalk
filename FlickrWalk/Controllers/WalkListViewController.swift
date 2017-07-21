@@ -16,6 +16,8 @@ class WalkListViewController: UIViewController {
     @IBOutlet var walkPhotoDataSource: WalkPhotoDataSource!
     
     lazy fileprivate var locationManager = LocationManager.shared
+    lazy fileprivate var flickrManager = FlickrManager.shared
+    
     fileprivate var distance = Measurement(value: 0, unit: UnitLength.meters)
     fileprivate var locationList: [CLLocation] = []
     
@@ -116,9 +118,19 @@ extension WalkListViewController: CLLocationManagerDelegate {
                 distance = distance + Measurement(value: delta, unit: UnitLength.meters)
                 
                 if delta >= 100 {
-                    let walkLocation = WalkLocation(longitude: newLocation.coordinate.longitude, latitude: newLocation.coordinate.latitude, photoURL: NSURL.init(string: "https://lorempixel.com/400/200/"))
-                    walkPhotoDataSource.walkPhotos.insert(walkLocation, at: 0)
-                    tableView.reloadData()
+                    
+                    flickrManager.getPhotoIDsForLocation(location: newLocation, completion: { (photos) in
+                        
+                        if photos.isEmpty {
+                            print("No photos for this location 😞")
+                            return
+                        }
+                        
+                        let walkLocation = WalkLocation(longitude: newLocation.coordinate.longitude, latitude: newLocation.coordinate.latitude, photoURL: NSURL.init(string: photos.first as! String))
+                        self.walkPhotoDataSource.walkPhotos.insert(walkLocation, at: 0)
+                        self.tableView.reloadData()
+                        
+                    })
                 }
             }
             
