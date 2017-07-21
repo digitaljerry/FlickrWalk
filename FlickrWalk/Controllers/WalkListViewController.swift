@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WalkListViewController.swift
 //  FlickrWalk
 //
 //  Created by Jernej Zorec on 21/07/2017.
@@ -8,11 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WalkListViewController: UIViewController {
 
+    @IBOutlet weak var startButton: UIBarButtonItem!
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
     }
 
     override func didReceiveMemoryWarning() {

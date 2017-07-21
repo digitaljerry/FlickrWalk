@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5FC8DAB71F2259EA00159AEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DAB61F2259EA00159AEE /* AppDelegate.swift */; };
-		5FC8DAB91F2259EB00159AEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DAB81F2259EB00159AEE /* ViewController.swift */; };
 		5FC8DABC1F2259EB00159AEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC8DABA1F2259EB00159AEE /* Main.storyboard */; };
 		5FC8DABE1F2259EB00159AEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC8DABD1F2259EB00159AEE /* Assets.xcassets */; };
 		5FC8DAC11F2259EB00159AEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC8DABF1F2259EB00159AEE /* LaunchScreen.storyboard */; };
 		5FC8DACC1F2259EB00159AEE /* FlickrWalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DACB1F2259EB00159AEE /* FlickrWalkTests.swift */; };
+		5FC8DADB1F225AB000159AEE /* WalkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DADA1F225AB000159AEE /* WalkListViewController.swift */; };
+		5FC8DADD1F225C5200159AEE /* WalkPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DADC1F225C5200159AEE /* WalkPhotoTableViewCell.swift */; };
+		5FC8DADF1F225C9300159AEE /* WalkPhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DADE1F225C9300159AEE /* WalkPhotoDataSource.swift */; };
+		5FC8DAE11F225E0500159AEE /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DAE01F225E0500159AEE /* UIImageView+Extensions.swift */; };
+		5FC8DAE31F2261FA00159AEE /* WalkLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DAE21F2261FA00159AEE /* WalkLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +32,6 @@
 /* Begin PBXFileReference section */
 		5FC8DAB31F2259EA00159AEE /* FlickrWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC8DAB61F2259EA00159AEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5FC8DAB81F2259EB00159AEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5FC8DABB1F2259EB00159AEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5FC8DABD1F2259EB00159AEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FC8DAC01F2259EB00159AEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +39,11 @@
 		5FC8DAC71F2259EB00159AEE /* FlickrWalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrWalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC8DACB1F2259EB00159AEE /* FlickrWalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrWalkTests.swift; sourceTree = "<group>"; };
 		5FC8DACD1F2259EB00159AEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FC8DADA1F225AB000159AEE /* WalkListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkListViewController.swift; sourceTree = "<group>"; };
+		5FC8DADC1F225C5200159AEE /* WalkPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkPhotoTableViewCell.swift; sourceTree = "<group>"; };
+		5FC8DADE1F225C9300159AEE /* WalkPhotoDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkPhotoDataSource.swift; sourceTree = "<group>"; };
+		5FC8DAE01F225E0500159AEE /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		5FC8DAE21F2261FA00159AEE /* WalkLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +85,11 @@
 		5FC8DAB51F2259EA00159AEE /* FlickrWalk */ = {
 			isa = PBXGroup;
 			children = (
+				5FC8DAD91F225A6C00159AEE /* Models */,
+				5FC8DAD81F225A6700159AEE /* Views */,
+				5FC8DAD71F225A6000159AEE /* Controllers */,
+				5FC8DAD61F225A5700159AEE /* Utilities */,
 				5FC8DAB61F2259EA00159AEE /* AppDelegate.swift */,
-				5FC8DAB81F2259EB00159AEE /* ViewController.swift */,
 				5FC8DABA1F2259EB00159AEE /* Main.storyboard */,
 				5FC8DABD1F2259EB00159AEE /* Assets.xcassets */,
 				5FC8DABF1F2259EB00159AEE /* LaunchScreen.storyboard */,
@@ -94,6 +105,39 @@
 				5FC8DACD1F2259EB00159AEE /* Info.plist */,
 			);
 			path = FlickrWalkTests;
+			sourceTree = "<group>";
+		};
+		5FC8DAD61F225A5700159AEE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5FC8DAE01F225E0500159AEE /* UIImageView+Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5FC8DAD71F225A6000159AEE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FC8DADA1F225AB000159AEE /* WalkListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5FC8DAD81F225A6700159AEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5FC8DADC1F225C5200159AEE /* WalkPhotoTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5FC8DAD91F225A6C00159AEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5FC8DADE1F225C9300159AEE /* WalkPhotoDataSource.swift */,
+				5FC8DAE21F2261FA00159AEE /* WalkLocation.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +245,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FC8DAB91F2259EB00159AEE /* ViewController.swift in Sources */,
+				5FC8DAE11F225E0500159AEE /* UIImageView+Extensions.swift in Sources */,
 				5FC8DAB71F2259EA00159AEE /* AppDelegate.swift in Sources */,
+				5FC8DADF1F225C9300159AEE /* WalkPhotoDataSource.swift in Sources */,
+				5FC8DADD1F225C5200159AEE /* WalkPhotoTableViewCell.swift in Sources */,
+				5FC8DADB1F225AB000159AEE /* WalkListViewController.swift in Sources */,
+				5FC8DAE31F2261FA00159AEE /* WalkLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +333,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -329,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
