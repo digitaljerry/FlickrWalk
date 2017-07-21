@@ -17,6 +17,7 @@
 		5FC8DADF1F225C9300159AEE /* WalkPhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DADE1F225C9300159AEE /* WalkPhotoDataSource.swift */; };
 		5FC8DAE11F225E0500159AEE /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DAE01F225E0500159AEE /* UIImageView+Extensions.swift */; };
 		5FC8DAE31F2261FA00159AEE /* WalkLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DAE21F2261FA00159AEE /* WalkLocation.swift */; };
+		5FC8DAE51F2267A000159AEE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DAE41F2267A000159AEE /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		5FC8DADE1F225C9300159AEE /* WalkPhotoDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkPhotoDataSource.swift; sourceTree = "<group>"; };
 		5FC8DAE01F225E0500159AEE /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		5FC8DAE21F2261FA00159AEE /* WalkLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkLocation.swift; sourceTree = "<group>"; };
+		5FC8DAE41F2267A000159AEE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				5FC8DADA1F225AB000159AEE /* WalkListViewController.swift */,
+				5FC8DAE41F2267A000159AEE /* LocationManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -192,6 +195,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 8URWNKG38E;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					5FC8DAC61F2259EB00159AEE = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -248,6 +256,7 @@
 				5FC8DAE11F225E0500159AEE /* UIImageView+Extensions.swift in Sources */,
 				5FC8DAB71F2259EA00159AEE /* AppDelegate.swift in Sources */,
 				5FC8DADF1F225C9300159AEE /* WalkPhotoDataSource.swift in Sources */,
+				5FC8DAE51F2267A000159AEE /* LocationManager.swift in Sources */,
 				5FC8DADD1F225C5200159AEE /* WalkPhotoTableViewCell.swift in Sources */,
 				5FC8DADB1F225AB000159AEE /* WalkListViewController.swift in Sources */,
 				5FC8DAE31F2261FA00159AEE /* WalkLocation.swift in Sources */,

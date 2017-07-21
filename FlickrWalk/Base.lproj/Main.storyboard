@@ -26,11 +26,15 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="My Walk" id="pai-F2-6wI">
-                                        <barButtonItem key="rightBarButtonItem" title="Start" id="73s-gy-uVf"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Start" id="73s-gy-uVf">
+                                            <connections>
+                                                <action selector="startButtonTapped:" destination="BYZ-38-t0r" id="HvM-kn-s7f"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3i4-nJ-dzo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3i4-nJ-dzo">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -81,6 +85,7 @@
                     <connections>
                         <outlet property="startButton" destination="73s-gy-uVf" id="zFz-UZ-wUI"/>
                         <outlet property="tableView" destination="3i4-nJ-dzo" id="cAC-yr-Y6R"/>
+                        <outlet property="walkPhotoDataSource" destination="Fa9-38-rou" id="5lJ-Os-UJL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,13 +10,7 @@ import UIKit
 
 class WalkPhotoDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     
-    let walkPhotos : Array<WalkLocation> = [
-        WalkLocation(longitude: 0.0, latitude: 0.0, photoURL: NSURL(string: "https://lorempixel.com/400/200/sports/1/")),
-        WalkLocation(longitude: 0.0, latitude: 0.0, photoURL: NSURL(string: "https://lorempixel.com/400/200/")),
-        WalkLocation(longitude: 0.0, latitude: 0.0, photoURL: NSURL(string: "https://lorempixel.com/400/200/")),
-        WalkLocation(longitude: 0.0, latitude: 0.0, photoURL: NSURL(string: "https://lorempixel.com/400/200/")),
-        WalkLocation(longitude: 0.0, latitude: 0.0, photoURL: NSURL(string: "https://lorempixel.com/400/200/"))
-    ]
+    var walkPhotos : [WalkLocation] = [WalkLocation]()
     
     // MARK: UITableViewDelegate
     
