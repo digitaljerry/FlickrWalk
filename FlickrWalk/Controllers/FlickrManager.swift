@@ -34,9 +34,10 @@ class FlickrManager {
                         let photos = json["photos"] as? [String: Any] {
                         
                         let p = photos["photo"] as? [Any]
-                        let first = p?.first as? [String: Any]
+                        let randomIndex = Int(arc4random_uniform(UInt32((p?.count)!)))
+                        let random = p?[randomIndex] as? [String: Any]
                         
-                        guard (first != nil) else {
+                        guard (random != nil) else {
                             print("No photos for this location")
                             DispatchQueue.main.async {
                                 completion([])
@@ -51,10 +52,10 @@ class FlickrManager {
                         // secret: 1e92283336
                         // size: m
                         
-                        let farmID = first?["farm"] as! Int
-                        let serverID = first?["server"] as! String
-                        let id = first?["id"] as! String
-                        let secret = first?["secret"] as! String
+                        let farmID = random?["farm"] as! Int
+                        let serverID = random?["server"] as! String
+                        let id = random?["id"] as! String
+                        let secret = random?["secret"] as! String
                         
                         let url = "https://farm\(farmID).staticflickr.com/\(serverID)/\(id)_\(secret).jpg"
                         
