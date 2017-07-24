@@ -10,11 +10,20 @@ import UIKit
 
 class WalkPhotoDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     
+    var walking = false
     var walkPhotos : [WalkLocation] = [WalkLocation]()
     
     // MARK: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if walkPhotos.count == 0 && !walking {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WalkNotStartedTableViewCell")!
+            return cell
+        } else if walkPhotos.count == 0 && walking {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WalkEmptyTableViewCell")!
+            return cell
+        }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "WalkPhotoTableViewCell") as! WalkPhotoTableViewCell
         
@@ -30,7 +39,7 @@ class WalkPhotoDataSource: NSObject, UITableViewDelegate, UITableViewDataSource 
     // MARK: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return walkPhotos.count
+        return max(walkPhotos.count, 1)
     }
     
 }

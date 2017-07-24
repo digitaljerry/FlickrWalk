@@ -69,6 +69,56 @@
                                             <outlet property="walkPhotoImageView" destination="cIv-6q-0OV" id="Meh-ei-Dds"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalkEmptyTableViewCell" rowHeight="300" id="V3S-uo-bXk">
+                                        <rect key="frame" x="0.0" y="178" width="375" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V3S-uo-bXk" id="u2j-NF-rsS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No 🏞's yet. Walk more! 🚶" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUp-dv-HQd">
+                                                    <rect key="frame" x="8" y="8" width="359" height="284"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" priority="750" constant="300" id="edd-nn-Jbo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wUp-dv-HQd" secondAttribute="trailing" id="0Ua-h2-3rf"/>
+                                                <constraint firstItem="wUp-dv-HQd" firstAttribute="top" secondItem="u2j-NF-rsS" secondAttribute="topMargin" id="ABZ-xE-d54"/>
+                                                <constraint firstItem="wUp-dv-HQd" firstAttribute="leading" secondItem="u2j-NF-rsS" secondAttribute="leadingMargin" id="Epf-Wo-saz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wUp-dv-HQd" secondAttribute="bottom" id="jfB-PH-Dks"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalkNotStartedTableViewCell" rowHeight="300" id="Bmz-a1-dcG">
+                                        <rect key="frame" x="0.0" y="478" width="375" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bmz-a1-dcG" id="pcO-W2-hPY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🙋‍♂️ Start your walk." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3V-Ve-041">
+                                                    <rect key="frame" x="8" y="8" width="359" height="284"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" priority="750" constant="300" id="fSI-iS-3gM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="E3V-Ve-041" firstAttribute="leading" secondItem="pcO-W2-hPY" secondAttribute="leadingMargin" id="5hF-pU-KbD"/>
+                                                <constraint firstItem="E3V-Ve-041" firstAttribute="top" secondItem="pcO-W2-hPY" secondAttribute="topMargin" id="bJW-3u-1qf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="E3V-Ve-041" secondAttribute="bottom" id="hMr-LN-UPc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="E3V-Ve-041" secondAttribute="trailing" id="okL-3E-fFw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Fa9-38-rou" id="Fii-pL-qXd"/>

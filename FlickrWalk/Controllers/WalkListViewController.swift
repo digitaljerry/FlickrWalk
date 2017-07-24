@@ -32,7 +32,7 @@ class WalkListViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
         
-        locationManager.delegate = self
+        walkPhotoDataSource.walking = false
     }
     
     // MARK: - Navigation
@@ -68,32 +68,34 @@ class WalkListViewController: UIViewController {
             break
         }
         
-        let status = CLLocationManager.authorizationStatus()
-        if (status == CLAuthorizationStatus.notDetermined) {
-            
-        } else {
-    
-        }
-        
     }
     
     // MARK: Walk tracking methods
     
     func startWalk() {
         locationManager.activityType = .fitness
+        locationManager.delegate = self
         locationManager.distanceFilter = 10
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.startUpdatingLocation()
         
         tracking = true
+        walkPhotoDataSource.walking = true
+        walkPhotoDataSource.walkPhotos = []
         startButton.title = "Stop"
+        locationList = []
+        
+        tableView.reloadData()
     }
     
     func stopWalk() {
         locationManager.stopUpdatingLocation()
         
         tracking = false
+        walkPhotoDataSource.walking = false
         startButton.title = "Start"
+        
+        tableView.reloadData()
     }
     
     // MARK: Helper Methods
@@ -127,7 +129,7 @@ extension WalkListViewController: CLLocationManagerDelegate {
                 let delta = newLocation.distance(from: lastLocation)
                 distance = distance + Measurement(value: delta, unit: UnitLength.meters)
                 
-                if delta >= 100 {
+                if delta >= Constants.AppConstants.distanceDelta {
                     
                     flickrManager.getPhotoIDsForLocation(location: newLocation, completion: { (photos) in
                         
