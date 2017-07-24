@@ -20,6 +20,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>FlickrWalk needs to track your location in order to track your walk path and add Flickr photos</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
