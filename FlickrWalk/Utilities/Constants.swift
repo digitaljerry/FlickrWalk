@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     struct AppConstants {
-        static let distanceDelta = 10.0;
+        static let distanceDelta = 100.0;
     }
     struct MapConstants {
     }
