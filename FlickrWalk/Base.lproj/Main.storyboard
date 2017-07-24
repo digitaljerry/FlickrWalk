@@ -26,6 +26,11 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="My Walk" id="pai-F2-6wI">
+                                        <barButtonItem key="leftBarButtonItem" title="Map" id="e62-RX-rRP">
+                                            <connections>
+                                                <segue destination="i9e-pW-h0v" kind="presentation" identifier="MapSegue" id="g2b-Qd-tPb"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Start" id="73s-gy-uVf">
                                             <connections>
                                                 <action selector="startButtonTapped:" destination="BYZ-38-t0r" id="HvM-kn-s7f"/>
@@ -91,6 +96,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="Fa9-38-rou" customClass="WalkPhotoDataSource" customModule="FlickrWalk" customModuleProvider="target"/>
             </objects>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="PcO-2x-Y08">
+            <objects>
+                <viewController id="i9e-pW-h0v" customClass="MapViewController" customModule="FlickrWalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Bl-Lv-2xK"/>
+                        <viewControllerLayoutGuide type="bottom" id="RDR-an-hza"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P8y-Xo-5LL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0MN-iI-riQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="i9e-pW-h0v" id="5cG-nx-Yay"/>
+                                </connections>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hS-Iu-xrT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Map" id="gwD-mC-9ki">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="cIV-UF-iSs">
+                                            <connections>
+                                                <action selector="closeButtonTap:" destination="i9e-pW-h0v" id="T3H-Iw-Ubh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0MN-iI-riQ" secondAttribute="trailing" id="3By-Si-IVb"/>
+                            <constraint firstAttribute="trailing" secondItem="1hS-Iu-xrT" secondAttribute="trailing" id="7Tw-uW-Y71"/>
+                            <constraint firstItem="0MN-iI-riQ" firstAttribute="top" secondItem="1hS-Iu-xrT" secondAttribute="bottom" id="EgX-82-52K"/>
+                            <constraint firstItem="0MN-iI-riQ" firstAttribute="leading" secondItem="P8y-Xo-5LL" secondAttribute="leading" id="FYU-0x-OcO"/>
+                            <constraint firstItem="1hS-Iu-xrT" firstAttribute="leading" secondItem="P8y-Xo-5LL" secondAttribute="leading" id="LQk-On-9ej"/>
+                            <constraint firstItem="1hS-Iu-xrT" firstAttribute="top" secondItem="0Bl-Lv-2xK" secondAttribute="bottom" id="Va3-qm-4eZ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="0MN-iI-riQ" secondAttribute="bottom" id="bv2-n2-nAt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="0MN-iI-riQ" id="S7f-x2-Ro4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vwU-3D-i6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247" y="-1"/>
         </scene>
     </scenes>
 </document>

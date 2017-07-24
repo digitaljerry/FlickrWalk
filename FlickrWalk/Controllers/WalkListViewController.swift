@@ -15,6 +15,8 @@ class WalkListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var walkPhotoDataSource: WalkPhotoDataSource!
     
+    weak var presentedMapViewController : MapViewController?
+    
     lazy fileprivate var locationManager = LocationManager.shared
     lazy fileprivate var flickrManager = FlickrManager.shared
     
@@ -32,11 +34,18 @@ class WalkListViewController: UIViewController {
         
         locationManager.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MapSegue" {
+            let controller = segue.destination as! MapViewController
+            controller.locationList = self.locationList
+            presentedMapViewController = controller
+        }
     }
+    
+    // MARK: Actions
 
     @IBAction func startButtonTapped(_ sender: Any) {
         
@@ -136,6 +145,7 @@ extension WalkListViewController: CLLocationManagerDelegate {
             }
             
             locationList.append(newLocation)
+            presentedMapViewController?.locationList.append(newLocation)
             
             print(newLocation)
         }
@@ -143,11 +153,11 @@ extension WalkListViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
-        //        if (status == CLAuthorizationStatus.denied) {
-        //            presentLocationDeniedAlert()
-        //
-        //        } else if (status == CLAuthorizationStatus.authorizedWhenInUse) {
-        //            startWalk()
-        //        }
+        if (status == CLAuthorizationStatus.denied) {
+            presentLocationDeniedAlert()
+
+        } else if (status == CLAuthorizationStatus.authorizedWhenInUse) {
+            startWalk()
+        }
     }
 }
