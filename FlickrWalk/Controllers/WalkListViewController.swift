@@ -22,6 +22,7 @@ class WalkListViewController: UIViewController {
     
     fileprivate var distance = Measurement(value: 0, unit: UnitLength.meters)
     fileprivate var locationList: [CLLocation] = []
+    fileprivate var lastPhotoLocation : CLLocation?
     
     private var tracking = false
     
@@ -125,11 +126,20 @@ extension WalkListViewController: CLLocationManagerDelegate {
             let howRecent = newLocation.timestamp.timeIntervalSinceNow
             guard newLocation.horizontalAccuracy < 20 && abs(howRecent) < 10 else { continue }
             
+            if lastPhotoLocation == nil {
+                lastPhotoLocation = newLocation
+                return
+            }
+            
             if let lastLocation = locationList.last {
-                let delta = newLocation.distance(from: lastLocation)
-                distance = distance + Measurement(value: delta, unit: UnitLength.meters)
+                let distance = newLocation.distance(from: lastPhotoLocation!)
+                let delta = Measurement(value: distance, unit: UnitLength.meters)
                 
-                if delta >= Constants.AppConstants.distanceDelta {
+                print("delta: \(delta)")
+                
+                if delta.value >= Constants.AppConstants.distanceDelta {
+                    
+                    lastPhotoLocation = lastLocation
                     
                     flickrManager.getPhotoIDsForLocation(location: newLocation, completion: { (photos) in
                         
