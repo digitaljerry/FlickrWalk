@@ -20,6 +20,7 @@
 		5FC8DAE51F2267A000159AEE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DAE41F2267A000159AEE /* LocationManager.swift */; };
 		5FC8DAEA1F227B7200159AEE /* FlickrManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC8DAE91F227B7200159AEE /* FlickrManager.swift */; };
 		5FF166151F25BCF300A2038E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF166141F25BCF300A2038E /* MapViewController.swift */; };
+		5FF1661A1F25D11500A2038E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF166191F25D11500A2038E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		5FC8DAE41F2267A000159AEE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5FC8DAE91F227B7200159AEE /* FlickrManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrManager.swift; sourceTree = "<group>"; };
 		5FF166141F25BCF300A2038E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		5FF166191F25D11500A2038E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				5FC8DAE01F225E0500159AEE /* UIImageView+Extensions.swift */,
+				5FF166191F25D11500A2038E /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				5FC8DADF1F225C9300159AEE /* WalkPhotoDataSource.swift in Sources */,
 				5FC8DAE51F2267A000159AEE /* LocationManager.swift in Sources */,
 				5FF166151F25BCF300A2038E /* MapViewController.swift in Sources */,
+				5FF1661A1F25D11500A2038E /* Constants.swift in Sources */,
 				5FC8DAEA1F227B7200159AEE /* FlickrManager.swift in Sources */,
 				5FC8DADD1F225C5200159AEE /* WalkPhotoTableViewCell.swift in Sources */,
 				5FC8DADB1F225AB000159AEE /* WalkListViewController.swift in Sources */,

@@ -16,7 +16,7 @@ class FlickrManager {
         let latitude = location?.coordinate.latitude ?? 46.5617351
         let longitude = location?.coordinate.longitude ?? 15.6471383
         
-        let url = URL(string: "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=6e530698222e9fdc4189dd8e2430ea2e&lat=\(latitude)&lon=\(longitude)&format=json&nojsoncallback=1")!
+        let url = URL(string: "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(Constants.FlickrConstants.apiKey)&lat=\(latitude)&lon=\(longitude)&format=json&nojsoncallback=1")!
         let request = URLRequest(url: url)
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
